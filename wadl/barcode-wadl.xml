@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-16"?>
+<application xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sienatool="http://www.todo.com" siena:serviceId="BarCode" xmlns="http://wadl.dev.java.net/2009/02">
+  <grammars>
+    <siena:jsonTypes targetNamespace="http://www.todo.com" xmlns:wadl="http://wadl.dev.java.net/2009/02">
+      <siena:object name="BarCodeInfo_Root">
+        <siena:property name="DecoderType" type="string" />
+        <siena:property name="DecoderContent" type="string" />
+      </siena:object>
+    </siena:jsonTypes>
+  </grammars>
+  <siena:authenticationProviders />
+  <siena:template />
+  <resources base="http://localhost:42869/">
+    <resource path="api/barcode">
+      <method name="POST" id="GetBarCodeInfo" siena:requiresAuthentication="false">
+        <doc title="This method will scan the uploaded image and return barcode information."/>
+        <request>
+          <representation mediaType="multipart/form-data">
+            <param name="Image" style="query" type="xs:base64Binary" siena:dtype="image" required="true" />
+          </representation>
+        </request>
+        <response siena:resultForm="single">
+          <representation mediaType="application/json">
+            <param name="BarCodeInfo" type="sienatool:BarCodeInfo_Root" style="Plain" path="" />
+          </representation>
+        </response>
+      </method>
+    </resource>
+  </resources>
+</application>
