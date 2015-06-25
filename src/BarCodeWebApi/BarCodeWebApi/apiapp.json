@@ -4,9 +4,9 @@
     "namespace": "microsoft.com",
     "gateway": "2015-01-14",
     "version": "1.0.0",
-    "title": "BarCodeWebApi",
+    "title": "Bar Code Decoder",
     "summary": "",
-    "author": "",
+    "author": "Wade Wegner",
     "endpoints": {
         "apiDefinition": "/swagger/docs/v1",
         "status": null
