@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using System.Web.Http.Description;
 using Swashbuckle.Swagger;
 
@@ -15,14 +12,14 @@ namespace BarCodeWebApi
             {
                 operation.consumes.Add("multipart/form-data");
                 operation.parameters = new List<Parameter>
-        {
-            new Parameter
-            {
-                name = "file",
-                required = true,
-                type = "file",
-            }
-        };
+                {
+                    new Parameter
+                    {
+                        name = "file",
+                        required = true,
+                        type = "file",
+                    }
+                };
             }
         }
     }
