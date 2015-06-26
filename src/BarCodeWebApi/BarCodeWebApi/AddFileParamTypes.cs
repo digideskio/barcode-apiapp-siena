@@ -18,6 +18,7 @@ namespace BarCodeWebApi
                         name = "file",
                         required = true,
                         type = "file",
+                        @in = "formData"
                     }
                 };
             }
